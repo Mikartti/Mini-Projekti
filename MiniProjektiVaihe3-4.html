@@ -1,0 +1,77 @@
+﻿<html lang="fi">
+	<head>
+		<title>Musici</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<style>
+		.jumbotron { 
+			background-color: lightblue;
+		}
+		body {
+			background-color: orange;
+		}
+		</style>
+		<script>
+			function showResult(str) {
+				if (str.length==0) {
+					document.getElementById("MiniProjektiVaihe3-01").innerHTML="";
+					document.getElementById("MiniProjektiVaihe3-01").style.border="0px";
+					return;
+				}
+				if (window.XMLHttpRequest) {
+					xmlhttp=new XMLHttpRequest();
+				} else {  // code for IE6, IE5
+					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange=function() {
+					if (this.readyState==4 && this.status==200) {
+						document.getElementById("MiniProjektiVaihe3-01").innerHTML=this.responseText;
+						document.getElementById("MiniProjektiVaihe3-01").style.border="1px solid #A5ACB2";
+					}
+				}
+				xmlhttp.open("GET","MiniProjektiVaihe3-01.php?q="+str,true);
+				xmlhttp.send();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="jumbotron text-right">
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="MusiciLogo.png" class="img-rounded" alt="Logo" width="250" length="250">
+				</div>
+				<div class="col-sm-9">
+					<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-text">Musici</a>
+						</div>
+						<ul class="nav navbar-nav">
+								<li><a href="MiniProjektiVaihe3.html">Home page</a></li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile
+									<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="MiniProjektiVaihe3-1.html">View Profile</a></li>
+										<li><a href="#">Log In/Out (riippuu siitä onko kirjautunut sisään vai ei)</a></li>
+									</ul>
+								</li>
+								<ul class="nav navbar-nav navbar-right">
+									<li class="active"><a href="MiniProjektiVaihe3-2.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+								</ul>
+								<form>
+									<input type="text" size="155" onkeyup="showResult(this.value)">
+									<div id="MiniProjektiVaihe3-01"></div>
+								</form>
+						</ul>
+					</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<h1>Tässä olisi faktoja halutusta asiasta jos ne pitäisi laittaa</h1>
+	</body>
+</html>

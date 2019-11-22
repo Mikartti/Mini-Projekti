@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Sivu[
+<!ELEMENT Sivu (pages)>
+<!ELEMENT pages (link*)>
+<!ELEMENT link (title*, url*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+]>
+<Sivu>
+	<pages>
+		<link>
+			<title>Esimerkki</title>
+			<url>MiniProjektiVaihe3-3.html</url>
+		</link>
+		<link>
+			<title>Tarkka</title>
+			<url>MiniProjektiVaihe3-4.html</url>
+		</link>
+	</pages>
+</Sivu>
